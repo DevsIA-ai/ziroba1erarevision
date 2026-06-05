@@ -165,6 +165,12 @@
     .back-to-top:hover { background:#D9921F; transform:translateY(-2px); }
     .back-to-top svg { width:22px; height:22px; }
 
+    @media (max-width: 768px) {
+      #fibras .split .reveal,
+      #toallas .split .reveal,
+      #cotonetes .split .reveal { order: -1; }
+    }
+
     /* Footer Encuéntranos */
     .footer__encuentranos { margin-top:16px; display:flex; flex-direction:row; gap:10px; flex-wrap:wrap; }
     .footer__encuentranos a {
