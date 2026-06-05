@@ -1,0 +1,738 @@
+﻿<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ziroba México — Fibras de Acero Inoxidable y Productos de Limpieza para el Hogar</title>
+  <meta name=”description” content=”Ziroba México — Fibras de acero inoxidable, cotonetes de bambú y toalla exfoliante corporal. Venta al mayoreo para distribuidores y tiendas en toda la República Mexicana.”>
+  <meta property="og:title" content="Ziroba México — La Reina del Hogar">
+  <meta property="og:description" content="Fibras de acero inoxidable y productos de limpieza 100% mexicanos. Distribución nacional para mayoristas y tiendas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zirobamexico.com/">
+  <meta property="og:image" content="https://zirobamexico.com/imagenes/zirobalogo.png">
+  <meta property="og:image:alt" content="Ziroba México — La Reina del Hogar">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ziroba México — La Reina del Hogar">
+  <meta name="twitter:description" content="Fibras de acero inoxidable y productos de limpieza 100% mexicanos. Distribución nacional para mayoristas y tiendas.">
+  <meta name="twitter:image" content="https://zirobamexico.com/imagenes/zirobalogo.png">
+  <link rel="canonical" href="https://zirobamexico.com/">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ziroba México",
+    "alternateName": "Ziroba",
+    "url": "https://zirobamexico.com",
+    "logo": "https://zirobamexico.com/imagenes/zirobalogo.png",
+    "description": "Empresa mexicana dedicada a la distribución de productos de limpieza al mayoreo: fibras de acero inoxidable, cotonetes de bambú y toallas exfoliantes corporales.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Vicente Guerrero 58",
+      "addressLocality": "Urbana Ixhuatepec, Ecatepec de Morelos",
+      "addressRegion": "Estado de México",
+      "postalCode": "55300",
+      "addressCountry": "MX"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+52-55-7678-9035",
+        "contactType": "sales",
+        "availableLanguage": "Spanish"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+52-55-7858-3609",
+        "contactType": "customer support",
+        "availableLanguage": "Spanish"
+      }
+    ],
+    "email": "ventas@zirobamexico.com",
+    "sameAs": [
+      "https://www.facebook.com/ZirobaMX",
+      "https://www.instagram.com/zirobamexico/",
+      "https://www.tiktok.com/@zirobamexico",
+      "https://www.amazon.com.mx/s?srs=121147690011&rh=p_89%3AZIROBA",
+      "https://listado.mercadolibre.com.mx/zacate-corporal-ziroba"
+    ]
+  }
+  </script>
+  <style>
+    /* Portfolio cards hover */
+    .card .card-img-link { display:block; overflow:hidden; }
+    .card .card-img-link img {
+      transition: transform .4s ease;
+      display:block;
+    }
+    .card:hover .card-img-link img { transform:scale(1.06); }
+    .card { transition: box-shadow .25s ease, transform .25s ease; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(26,58,92,.18); }
+
+    /* ===== HERO CAROUSEL ===== */
+    .hero-carousel-section { position:relative; }
+    .hero-carousel-wrap {
+      position:relative; overflow:hidden;
+      min-height:88vh;
+    }
+    .hero-track {
+      display:flex; width:300%; min-height:88vh;
+      transition:transform .7s cubic-bezier(.4,0,.2,1);
+      will-change:transform;
+    }
+    .hero-slide {
+      width:33.3333%; flex-shrink:0;
+      min-height:88vh; display:flex; align-items:center;
+      padding:80px 0 100px; position:relative; overflow:hidden;
+    }
+    .hero-slide-inner {
+      display:grid; grid-template-columns:1fr 480px;
+      gap:60px; align-items:center;
+      padding:0 56px;
+    }
+    .hero-label {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 16px; border-radius:100px;
+      background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
+      color:rgba(255,255,255,.9); font-size:.78rem; font-weight:700;
+      text-transform:uppercase; letter-spacing:.1em; margin-bottom:20px;
+    }
+    .hero-h1 {
+      font-family:'Montserrat',sans-serif; font-weight:800;
+      font-size:clamp(2rem,4.5vw,3.2rem); color:white;
+      line-height:1.1; margin-bottom:18px;
+    }
+    .hero-sub {
+      color:rgba(255,255,255,.82); font-size:1.1rem;
+      line-height:1.7; margin-bottom:36px; max-width:520px;
+    }
+    .hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
+    .hero-visual {
+      display:flex; align-items:center; justify-content:center;
+    }
+    .hero-visual img {
+      width:100%; max-height:440px; object-fit:contain; display:block;
+    }
+
+    /* Arrows */
+    .hero-arrow {
+      position:absolute; top:50%; transform:translateY(-50%);
+      z-index:10; width:50px; height:50px; border-radius:50%;
+      background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3);
+      color:white; display:flex; align-items:center; justify-content:center;
+      cursor:pointer; transition:background .2s, transform .2s;
+      backdrop-filter:blur(8px);
+    }
+    .hero-arrow:hover { background:rgba(255,255,255,.28); transform:translateY(-50%) scale(1.08); }
+    .hero-arrow--prev { left:8px; }
+    .hero-arrow--next { right:8px; }
+
+    /* Dots */
+    .hero-dots {
+      position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
+      display:flex; gap:8px; z-index:10;
+    }
+    .hero-dot {
+      width:8px; height:8px; border-radius:50%;
+      background:rgba(255,255,255,.38); border:none; cursor:pointer;
+      padding:0; transition:all .3s;
+    }
+    .hero-dot.active { background:white; width:24px; border-radius:4px; }
+
+    /* Trust bar */
+    .hero-trust-bar {
+      background:#0F2540;
+      padding:18px 0;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .hero-trust-bar .trust-bar { justify-content:center; }
+
+    @media (max-width:900px) {
+      .hero-slide-inner { grid-template-columns:1fr; }
+      .hero-visual { display:none; }
+      .hero-arrow { display:none; }
+      .hero-slide { padding:60px 0 80px; }
+    }
+    @media (max-width:480px) {
+      .hero-h1 { font-size:1.9rem; }
+      .hero-sub { font-size:1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UTILITY BAR -->
+  <div class="utility-bar">
+    <div class="container">
+      <div class="utility-bar__inner">
+        <div class="utility-bar__contact">
+          <a href="tel:+525576789035" class="utility-bar__item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12.5 19.79 19.79 0 01.12 4 2 2 0 012.1 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.17 6.17l1.08-1.34a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (+52) 55 7678 9035
+          </a>
+          <a href="https://wa.me/525578583609?text=Hola%2C+me+interesa+conocer+los+productos+Ziroba+y+ser+distribuidor." target="_blank" rel="noopener" class="utility-bar__item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Escríbenos ahora
+          </a>
+        </div>
+        <div class="utility-bar__socials">
+          <a href="https://www.facebook.com/ZirobaMX" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/zirobamexico/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@zirobamexico" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.83a8.18 8.18 0 004.78 1.52V6.9a4.85 4.85 0 01-1.01-.21z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Menú principal">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">
+          <img src="imagenes/zirobalogo.png" alt="Ziroba México" style="height:44px;width:auto;object-fit:contain;">
+        </a>
+
+        <div class="navbar__nav">
+          <a href="index.html" class="navbar__link">Inicio</a>
+          <div class="navbar__dropdown">
+            <a href="productos.html" class="navbar__link navbar__dropdown-toggle">
+              Productos
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="navbar__dropdown-menu">
+              <a href="productos.html#fibras" class="navbar__dropdown-item">
+                <img src="imagenes/iconos%20productos/fibra.png" style="width:22px;height:22px;object-fit:contain;flex-shrink:0;">
+                Fibras de Acero Inoxidable
+              </a>
+              <a href="productos.html#toallas" class="navbar__dropdown-item">
+                <img src="imagenes/iconos%20productos/toalla.png" style="width:22px;height:22px;object-fit:contain;flex-shrink:0;">
+                Toalla Exfoliante
+              </a>
+              <a href="productos.html#cotonetes" class="navbar__dropdown-item">
+                <img src="imagenes/iconos%20productos/cotonete.png" style="width:22px;height:22px;object-fit:contain;flex-shrink:0;">
+                Cotonetes de Bambú
+              </a>
+            </div>
+          </div>
+          <a href="distribuidores.html" class="navbar__link">Mayoreo</a>
+          <a href="nosotros.html" class="navbar__link">Nosotros</a>
+          <!--  <a href="donde-comprar.html" class="navbar__link">Dóndee Comprar</a> -->
+          <a href="blog.html" class="navbar__link">Blog</a>
+          <a href="contacto.html" class="navbar__link">Contacto</a>
+        </div>
+
+        <a href="catalogo.html" class="btn btn--primary navbar__cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Descargar Catálogo
+        </a>
+
+        <button class="navbar__hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="navbar__mobile" role="dialog" aria-modal="true" aria-label="Menú móvil">
+    <a href="index.html" class="navbar__mobile-link">Inicio</a>
+    <div>
+      <a href="productos.html" class="navbar__mobile-link">Productos ▾</a>
+      <div class="navbar__mobile-sub">
+        <a href="productos.html#fibras">Fibras de Acero Inoxidable</a>
+        <a href="productos.html#cotonetes">Cotonetes de Bambú</a>
+        <a href="productos.html#toallas">Toalla Exfoliante</a>
+      </div>
+    </div>
+    <a href="distribuidores.html" class="navbar__mobile-link">Mayoreo</a>
+    <a href="nosotros.html" class="navbar__mobile-link">Nosotros</a>
+    <!-- <a href="donde-comprar.html" class="navbar__mobile-link">Dónde Comprar</a> -->
+    <a href="blog.html" class="navbar__mobile-link">Blog</a>
+    <a href="contacto.html" class="navbar__mobile-link">Contacto</a>
+    <div class="navbar__mobile-ctas">
+      <a href="catalogo.html" class="btn btn--primary" style="justify-content:center;">Descargar Catálogo</a>
+      <a href="https://wa.me/525578583609?text=Hola%2C+me+interesa+conocer+los+productos+Ziroba." target="_blank" rel="noopener" class="navbar__mobile-wa">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO CAROUSEL -->
+  <section class="hero-carousel-section">
+    <div class="hero-carousel-wrap">
+      <div class="hero-track" id="heroTrack">
+
+        <!-- SLIDE 1: Fibras -->
+        <div class="hero-slide" style="background:linear-gradient(135deg,rgba(26,58,92,.82) 0%,rgba(15,37,64,.82) 55%,rgba(22,41,64,.82) 100%),url('imagenes/imagenes%20carrusel/antes%20y%20despues%20fibra.png') center/cover no-repeat;">
+          <div class="container" style="position:relative;z-index:2;width:100%;">
+            <div class="hero-slide-inner">
+              <div>
+                <div class="hero-label">🇲🇽 Línea estrella · 100% Mexicano</div>
+                <h1 class="hero-h1">La Reina del Hogar que tu familia merece</h1>
+                <p class="hero-sub">Fibras de acero inoxidable 100% mexicanas. Limpian profundo, no se oxidan, duran el doble.</p>
+                <div class="hero-btns">
+                  <a href="productos.html#fibras" class="btn btn--primary btn--lg">
+                    Ver Productos
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+
+                </div>
+              </div>
+              <div class="hero-visual">
+                <img src="imagenes/productos%20ziroba/fibras%20juntas.png" alt="Fibras ZIROBA" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2: Toallas -->
+        <div class="hero-slide" style="background:linear-gradient(135deg,rgba(27,58,45,.82) 0%,rgba(15,37,32,.82) 55%,rgba(26,58,92,.82) 100%),url('imagenes/imagenes%20carrusel/toalla.JPG') center/cover no-repeat;">
+          <div class="container" style="position:relative;z-index:2;width:100%;">
+            <div class="hero-slide-inner">
+              <div>
+                <div class="hero-label">✨ Línea Zacate Ziroba · Cuidado Premium</div>
+                <h2 class="hero-h1">Cuida tu piel con lo mejor de México</h2>
+                <p class="hero-sub">Toallas exfoliantes premium. Remueven células muertas, aptas para todo tipo de piel.</p>
+                <div class="hero-btns">
+                  <a href="productos.html#toallas" class="btn btn--primary btn--lg">
+                    Ver Productos
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+
+                </div>
+              </div>
+              <div class="hero-visual">
+                <img src="imagenes/productos%20ziroba/toallas%20juntas.png" alt="Toallas Exfoliantes ZIROBA" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3: Cotonetes -->
+        <div class="hero-slide" style="background:linear-gradient(135deg,rgba(45,58,30,.82) 0%,rgba(30,45,20,.82) 55%,rgba(26,58,92,.82) 100%),url('imagenes/imagenes%20carrusel/cotonete.png') center/cover no-repeat;">
+          <div class="container" style="position:relative;z-index:2;width:100%;">
+            <div class="hero-slide-inner">
+              <div>
+                <div class="hero-label">🌿 Línea Ecológica · Biodegradable</div>
+                <h2 class="hero-h1">La alternativa sustentable que tu familia merece</h2>
+                <p class="hero-sub">Cotonetes con mango de bambú biodegradable. Punta 100% algodón. Cuidan tu hogar y el planeta.</p>
+                <div class="hero-btns">
+                  <a href="productos.html#cotonetes" class="btn btn--primary btn--lg">
+                    Ver Productos
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+
+                </div>
+              </div>
+              <div class="hero-visual">
+                <img src="imagenes/productos%20ziroba/cotonetes%20juntas.png" alt="Cotonetes Bambú ZIROBA" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /hero-track -->
+
+      <!-- Flechas -->
+      <button class="hero-arrow hero-arrow--prev" id="heroPrev" aria-label="Slide anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="hero-arrow hero-arrow--next" id="heroNext" aria-label="Siguiente slide">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <!-- Dots -->
+      <div class="hero-dots">
+        <button class="hero-dot active" aria-label="Slide 1"></button>
+        <button class="hero-dot" aria-label="Slide 2"></button>
+        <button class="hero-dot" aria-label="Slide 3"></button>
+      </div>
+
+    </div><!-- /hero-carousel-wrap -->
+
+    <!-- Barra de beneficios fija -->
+    <div class="hero-trust-bar">
+      <div class="container">
+        <div class="trust-bar">
+          <div class="trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+            🇲🇽 100% Mexicano
+          </div>
+          <div class="trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            +15 Presentaciones
+          </div>
+          <div class="trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Entrega Nacional e Internacional
+          </div>
+          <div class="trust-item" style="gap:10px;">
+            <a href="https://www.amazon.com.mx/s?srs=121147690011&rh=p_89%3AZIROBA" target="_blank" rel="noopener">
+              <img src="imagenes/iconos%20productos/amazon.png" alt="Amazon" loading="lazy" style="height:28px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity='.6'" onmouseout="this.style.opacity='.9'">
+            </a>
+            <a href="https://listado.mercadolibre.com.mx/zacate-corporal-ziroba#D[A:Zacate%20Corporal%20Ziroba]" target="_blank" rel="noopener">
+              <img src="imagenes/iconos%20productos/MERCADO%20LIBRE.png" alt="Mercado Libre" loading="lazy" style="height:28px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.9;transition:opacity .2s;" onmouseover="this.style.opacity='.6'" onmouseout="this.style.opacity='.9'">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- LÍNEAS DE PRODUCTO -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:56px;">
+        <span class="section-label">Portafolio</span>
+        <h2 class="section-title">Nuestras líneas de producto</h2>
+        <p class="section-subtitle center">Todo lo que necesitas para mantener tu hogar y negocio impecable, en un solo proveedor.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <a href="productos.html#fibras" class="card-img-link">
+            <img src="imagenes/productos%20ziroba/fibra%20principal.png" alt="Fibras de Acero Inoxidable" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+          </a>
+          <div class="card__body">
+            <span class="card__badge">Más vendida</span>
+            <h3 class="card__title">Fibras de Acero Inoxidable</h3>
+            <p class="card__text">La herramienta indispensable para limpiar sin rayar. Perfecta para ollas, sartenes, parrillas y más. No se oxida, dura el doble.</p>
+            <a href="productos.html#fibras" class="card__link">
+              Ver línea completa
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="card reveal reveal-delay-1">
+          <a href="productos.html#toallas" class="card-img-link">
+            <img src="imagenes/productos%20ziroba/toalla%20principal.png" alt="Toalla Exfoliante Corporal" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+          </a>
+          <div class="card__body">
+            <span class="card__badge badge--orange">Premium</span>
+            <h3 class="card__title">Toalla Exfoliante Corporal</h3>
+            <p class="card__text">Fabricada con los más altos estándares de calidad. Para todo tipo de piel, ideal para áreas difíciles de alcanzar y para remover el exceso de células muertas.</p>
+            <a href="productos.html#toallas" class="card__link">
+              Ver línea completa
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="card reveal reveal-delay-2">
+          <a href="productos.html#cotonetes" class="card-img-link">
+            <img src="imagenes/productos%20ziroba/cotonetes%20principal.png" alt="Cotonetes de Bambú" loading="lazy" style="width:100%;height:200px;object-fit:cover;">
+          </a>
+          <div class="card__body">
+            <span class="card__badge badge--green">Ecológico</span>
+            <h3 class="card__title">Cotonetes de Bambú</h3>
+            <p class="card__text">Punta 100% algodón, mango biodegradable. Para belleza, cuidado de bebé y hogar. La alternativa sustentable que tu familia merece.</p>
+            <a href="productos.html#cotonetes" class="card__link">
+              Ver línea completa
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISTRIBUIDORES SPLIT -->
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div style="border-radius:var(--radius);overflow:hidden;" class="reveal">
+          <img src="imagenes/productos%20ziroba/envio/envios.png" alt="Envíos Ziroba — Nacional e Internacional" loading="lazy" style="width:100%;display:block;">
+        </div>
+        <div class="reveal reveal-delay-1">
+          <span class="section-label">Canal mayorista</span>
+          <h2 class="section-title">Surte tu negocio con Ziroba</h2>
+          <p style="margin-bottom:28px;">Trabajamos con tiendas de abarrotes, mayoristas, papelerías y distribuidores en todo el país. Precios por volumen, entrega oportuna y el respaldo de una marca que tus clientes ya conocen.</p>
+          <ul class="checklist" style="margin-bottom:32px;">
+            <li class="checklist__item">
+              <span class="checklist__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Precios especiales por volumen con márgenes atractivos
+            </li>
+            <li class="checklist__item">
+              <span class="checklist__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Diversas presentaciones y SKUs para todo tipo de cliente
+            </li>
+            <li class="checklist__item">
+              <span class="checklist__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Material POP de apoyo para tu punto de venta
+            </li>
+            <li class="checklist__item">
+              <span class="checklist__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Atención personalizada del equipo de ventas
+            </li>
+          </ul>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;">
+            <a href="distribuidores.html" class="btn btn--orange btn--lg">Hacer mi pedido</a>
+            <a href="catalogo.html" class="btn btn--outline-teal">Descargar catálogo →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="section section--alt">
+    <div class="container">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:16px;">
+        <div>
+          <span class="section-label">Blog & consejos</span>
+          <h2 class="section-title" style="margin-bottom:0;">Consejos para una cocina impecable</h2>
+        </div>
+        <a href="blog.html" class="btn btn--outline-teal">Ver todos los artículos →</a>
+      </div>
+      <div class="grid-3">
+        <article class="card reveal">
+          <a href="blog.html#parrilla" class="card-img-link">
+            <div style="height:180px;background:linear-gradient(135deg,#FFF3ED,#D9921F);overflow:hidden;position:relative;">
+              <img src="imagenes/blog/parrilla.png" alt="Parrilla" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+            </div>
+          </a>
+          <div class="card__body">
+            <span class="card__badge">Fibra ZIROBA</span>
+            <h3 class="card__title">Cómo limpiar una parrilla después del asado sin esfuerzo</h3>
+            <p class="card__text" style="font-size:.85rem;">El truco que usan los expertos para tener una parrilla brillante en 5 minutos.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;">
+              <span style="font-size:.8rem;color:var(--gray);">8 ene 2025</span>
+              <a href="blog.html#parrilla" class="card__link" style="font-size:.85rem;">Leer más →</a>
+            </div>
+          </div>
+        </article>
+        <article class="card reveal reveal-delay-1">
+          <a href="blog.html#toalla-paso-a-paso" class="card-img-link">
+            <div style="height:180px;background:linear-gradient(135deg,#FFF0E8,#F5A623);overflow:hidden;position:relative;">
+              <img src="imagenes/blog/toalla-paso-a-paso.jpg" alt="Toalla Exfoliante" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+            </div>
+          </a>
+          <div class="card__body">
+            <span class="card__badge badge--orange">Toalla Exfoliante</span>
+            <h3 class="card__title">Cómo usar la Toalla Exfoliante Corporal Ziroba paso a paso</h3>
+            <p class="card__text" style="font-size:.85rem;">Técnica, frecuencia y cómo adaptarla a tu tipo de piel para ver resultados desde la primera sesión.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;">
+              <span style="font-size:.8rem;color:var(--gray);">10 feb 2025</span>
+              <a href="blog.html#toalla-paso-a-paso" class="card__link" style="font-size:.85rem;">Leer más →</a>
+            </div>
+          </div>
+        </article>
+        <article class="card reveal reveal-delay-2">
+          <a href="blog.html#cotonetes-bambu" class="card-img-link">
+            <div style="height:180px;background:linear-gradient(135deg,#F0FFF4,#2ECC71);overflow:hidden;position:relative;">
+              <img src="imagenes/blog/cotonetes-bambu.png" alt="Cotonetes de Bambú" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+            </div>
+          </a>
+          <div class="card__body">
+            <span class="card__badge badge--green">Cotonetes</span>
+            <h3 class="card__title">¿Por qué cambiar tus cotonetes de plástico por bambú?</h3>
+            <p class="card__text" style="font-size:.85rem;">El impacto ambiental de este pequeño cambio y sus beneficios para tu salud y el planeta.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;">
+              <span style="font-size:.8rem;color:var(--gray);">2 ene 2025</span>
+              <a href="blog.html#cotonetes-bambu" class="card__link" style="font-size:.85rem;">Leer más →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTADÍSTICAS -->
+  <section class="section section--teal">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:48px;">
+        <h2 style="color:white;">Ziroba en números</h2>
+        <p style="color:rgba(255,255,255,.8);margin-top:8px;">El respaldo de una marca con presencia comprobada en todo el país.</p>
+      </div>
+      <div class="grid-4">
+        <div class="stat-card reveal">
+          <div class="stat-card__number" data-counter data-target="15" data-suffix="+">0+</div>
+          <div class="stat-card__label">Presentaciones disponibles</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-card__number" data-counter data-target="500" data-suffix="+">0+</div>
+          <div class="stat-card__label">Clientes</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-card__number" data-counter data-target="10" data-suffix="+">0+</div>
+          <div class="stat-card__label">Años en el mercado</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-card__number" data-counter data-target="100" data-suffix="%">0%</div>
+          <div class="stat-card__label">Acero inoxidable genuino</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPUESTA DE VALOR — 3 pilares -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:56px;">
+        <span class="section-label">Nuestra promesa</span>
+        <h2 class="section-title">Por qué las mejores familias eligen Ziroba</h2>
+      </div>
+      <div class="grid-3">
+        <div class="feature-card reveal">
+          <div class="feature-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Acero Inoxidable Real</h3>
+          <p class="feature-card__text">Fabricada con 100% acero inoxidable. Brinda limpieza profunda, remueve grasa pegada, no se oxida, resiste la corrosión y ofrece máxima duración.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-card__icon" style="background:rgba(46,204,113,.1);color:#27ae60;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 21H4a2 2 0 01-2-2V7a2 2 0 012-2h5"/><path d="M22 14H11"/><path d="M11 7v14"/><path d="M18 2l4 4-4 4"/></svg>
+          </div>
+          <h3 class="feature-card__title">Comprometidos con el Planeta</h3>
+          <p class="feature-card__text">Nuestros cotonetes con mango de bambú son biodegradables y compostables. Limpiar bien no tiene por qué costarle al medio ambiente.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-card__icon" style="background:rgba(245,166,35,.1);color:var(--orange);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3 class="feature-card__title">Distribución Nacional e Internacional</h3>
+          <p class="feature-card__text">Llegamos a tiendas, mayoristas y distribuidores en toda la República Mexicana y América Latina. Precios por volumen, entrega oportuna y atención personalizada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">
+            <img src="imagenes/zirobalogo.png" alt="Ziroba México" style="height:48px;width:auto;object-fit:contain;">
+          </div>
+          <p class="footer__desc">La Reina del Hogar. Empresa dedicada a la proyección del comercio en América Latina, con importación, exportación y distribución de productos de calidad para mayoristas y tiendas.</p>
+          <div class="footer__encuentranos">
+            <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-bottom:6px;">Encuéntranos en</p>
+            <a href="https://www.amazon.com.mx/s?srs=121147690011&rh=p_89%3AZIROBA" class="amazon" target="_blank" rel="noopener">
+              <img src="imagenes/iconos%20productos/amazon.png" alt="Amazon" style="height:28px;width:auto;object-fit:contain;">
+            </a>
+            <a href="https://listado.mercadolibre.com.mx/zacate-corporal-ziroba#D[A:Zacate%20Corporal%20Ziroba]" class="ml" target="_blank" rel="noopener">
+              <img src="imagenes/iconos%20productos/MERCADO%20LIBRE.png" alt="Mercado Libre" style="height:28px;width:auto;object-fit:contain;">
+            </a>
+          </div>
+          <div class="footer__socials">
+            <a href="https://www.facebook.com/ZirobaMX" target="_blank" rel="noopener" class="footer__social-btn" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/zirobamexico/" target="_blank" rel="noopener" class="footer__social-btn" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@zirobamexico" target="_blank" rel="noopener" class="footer__social-btn" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.83a8.18 8.18 0 004.78 1.52V6.9a4.85 4.85 0 01-1.01-.21z"/></svg>
+            </a>
+            <a href="https://wa.me/525578583609" class="footer__social-btn" aria-label="WhatsApp" style="background:rgba(37,211,102,.15);color:#25D366;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Navegación</div>
+          <ul class="footer__links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="distribuidores.html">Mayoreo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+           <!-- <li><a href="donde-comprar.html">Dónde Comprar</a></li> -->
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Productos</div>
+          <ul class="footer__links">
+            <li><a href="productos.html#fibras">Fibras de Acero Inoxidable</a></li>
+            <li><a href="productos.html#cotonetes">Cotonetes de Bambú</a></li>
+            <li><a href="productos.html#toallas">Toalla Exfoliante</a></li>
+            <li><a href="catalogo.html">Catálogo 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Contacto</div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <a href="https://maps.app.goo.gl/gzKfzwtEmLWUvBBd7" target="_blank" rel="noopener" style="color:inherit;">Vicente Guerrero 58, Urbana Ixhuatepec,<br>Ecatepec, Estado de México</a>
+          </div>
+          <div class="footer__contact-item" style="align-items:flex-start;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" style="width:16px;height:16px;flex-shrink:0;margin-top:3px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12.5 19.79 19.79 0 01.12 4 2 2 0 012.1 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.17 6.17l1.08-1.34a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+              <a href="tel:+525576789035" style="color:inherit;white-space:nowrap;">(+52) 55 7678 9035</a>
+              <a href="tel:+525576789036" style="color:inherit;white-space:nowrap;">(+52) 55 7678 9036</a>
+              <a href="tel:+525576789037" style="color:inherit;white-space:nowrap;">(+52) 55 7678 9037</a>
+              <a href="tel:+525576789038" style="color:inherit;white-space:nowrap;">(+52) 55 7678 9038</a>
+              
+            </div>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:ventas@zirobamexico.com" style="color:inherit;">ventas@zirobamexico.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(0,0,0,.2);">
+      <div class="container">
+        <div class="footer__bottom">
+          <span>© 2026 Ziroba México · La Reina del Hogar</span>
+          <a href="#">Política de Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/525578583609?text=Hola%2C+me+interesa+conocer+los+productos+Ziroba+y+ser+distribuidor." target="_blank" rel="noopener" class="wa-fab" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var track  = document.getElementById('heroTrack');
+      var dots   = document.querySelectorAll('.hero-dot');
+      var prev   = document.getElementById('heroPrev');
+      var next   = document.getElementById('heroNext');
+      var total  = 3;
+      var cur    = 0;
+      var timer;
+
+      function goTo(idx) {
+        cur = ((idx % total) + total) % total;
+        track.style.transform = 'translateX(-' + (cur * (100 / total)) + '%)';
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === cur); });
+      }
+
+      function reset() {
+        clearInterval(timer);
+        timer = setInterval(function () { goTo(cur + 1); }, 5000);
+      }
+
+      if (prev) prev.addEventListener('click', function () { goTo(cur - 1); reset(); });
+      if (next) next.addEventListener('click', function () { goTo(cur + 1); reset(); });
+      dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); reset(); }); });
+
+      /* Swipe en móvil */
+      var startX = 0;
+      track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', function (e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { goTo(diff > 0 ? cur + 1 : cur - 1); reset(); }
+      });
+
+      reset();
+    })();
+  </script>
+</body>
+</html>

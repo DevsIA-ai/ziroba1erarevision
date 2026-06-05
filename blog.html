@@ -1,0 +1,1158 @@
+﻿<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Consejos de Limpieza para el Hogar | Ziroba México</title>
+  <meta name="description" content="Blog Ziroba: guías de limpieza para cocina, cuidado de piel con toalla exfoliante y vida sustentable con cotonetes de bambú. Consejos prácticos para el hogar.">
+  <link rel="canonical" href="https://zirobamexico.com/blog.html">
+  <meta property="og:title" content="Blog — Consejos de Limpieza para el Hogar | Ziroba México">
+  <meta property="og:description" content="Guías de limpieza para cocina, cuidado de piel con toalla exfoliante y vida sustentable con cotonetes de bambú. Consejos prácticos para el hogar.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zirobamexico.com/blog.html">
+  <meta property="og:image" content="https://zirobamexico.com/imagenes/zirobalogo.png">
+  <meta property="og:image:alt" content="Ziroba México — Blog de limpieza">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blog — Consejos de Limpieza para el Hogar | Ziroba México">
+  <meta name="twitter:description" content="Guías de limpieza para cocina, cuidado de piel con toalla exfoliante y vida sustentable con cotonetes de bambú. Consejos prácticos para el hogar.">
+  <meta name="twitter:image" content="https://zirobamexico.com/imagenes/zirobalogo.png">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .blog-hero {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 60%, var(--teal-light) 100%);
+      padding: 72px 0 60px;
+    }
+    .blog-hero h1 { color: white; margin-bottom: 12px; }
+    .blog-hero p { color: rgba(255,255,255,.85); font-size: 1.1rem; max-width: 540px; }
+
+    /* Filtros de categoría */
+    .category-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 24px;
+      font-size: .875rem;
+      font-weight: 600;
+      border: 1.5px solid var(--gray-light);
+      color: var(--gray);
+      background: white;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+
+    /* Artículo destacado */
+    .article-featured {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0;
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 64px;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .article-featured:hover { box-shadow: 0 12px 48px rgba(0,0,0,.15); transform: translateY(-4px); }
+    .article-featured__img {
+      background: linear-gradient(135deg, var(--teal-pale), #B2EBF2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      min-height: 360px;
+    }
+    .article-featured__body {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .article-featured__meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .article-featured__title {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .article-featured__excerpt {
+      color: var(--gray);
+      font-size: .95rem;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    /* Grid de artículos */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .article-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: box-shadow var(--transition), transform var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .article-card__img {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4.5rem;
+      flex-shrink: 0;
+    }
+    .article-card__body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .article-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .article-card__date {
+      font-size: .78rem;
+      color: var(--gray);
+    }
+    .article-card__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .article-card__excerpt {
+      font-size: .875rem;
+      color: var(--gray);
+      line-height: 1.65;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .article-card__read {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--teal);
+      font-weight: 600;
+      font-size: .875rem;
+      transition: gap var(--transition);
+      margin-top: auto;
+    }
+    .article-card__read:hover { gap: 10px; }
+
+    /* Paginación */
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 64px;
+    }
+    .page-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .875rem;
+      font-weight: 600;
+      border: 1.5px solid var(--gray-light);
+      color: var(--gray);
+      background: white;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .page-btn:hover, .page-btn.active {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+    .page-btn--prev, .page-btn--next { width: auto; padding: 0 16px; gap: 6px; }
+
+    /* Newsletter lateral */
+    .blog-layout { display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: start; }
+    .sidebar { position: sticky; top: 100px; }
+    .sidebar-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .sidebar-card__title { font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
+    .sidebar-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: .8rem;
+      font-weight: 600;
+      background: var(--gray-light);
+      color: var(--gray);
+      margin: 4px;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .sidebar-tag:hover { background: var(--teal); color: white; }
+
+    /* ── Blog Modal ── */
+    .blog-modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,.65); overflow-y: auto; padding: 24px 16px;
+    }
+    .blog-modal-overlay.open { display: block; }
+    .blog-modal {
+      max-width: 760px; margin: 0 auto; background: white;
+      border-radius: var(--radius); overflow: hidden; position: relative;
+      animation: modalIn .28s ease;
+    }
+    @keyframes modalIn {
+      from { transform: translateY(28px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+    .blog-modal__close {
+      position: absolute; top: 14px; right: 14px; z-index: 10;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(0,0,0,.4); border: none; color: white;
+      font-size: 1.1rem; cursor: pointer; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .blog-modal__close:hover { background: rgba(0,0,0,.65); }
+    .blog-modal__img {
+      height: 360px; display: flex; align-items: center;
+      justify-content: center; font-size: 6rem;
+      position: relative; overflow: hidden;
+    }
+    .blog-modal__img img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .blog-modal__body { padding: 32px 36px 36px; }
+    .blog-modal__body h2 { font-size: 1.45rem; font-weight: 800; color: var(--navy); margin: 14px 0 18px; line-height: 1.25; }
+    .blog-modal__body p { color: var(--gray); line-height: 1.8; margin-bottom: 14px; font-size: .95rem; }
+    .blog-modal__body h3 { font-size: 1.02rem; font-weight: 700; color: var(--navy); margin: 22px 0 8px; }
+    .blog-modal__body ul, .blog-modal__body ol { padding-left: 22px; margin-bottom: 14px; }
+    .blog-modal__body li { color: var(--gray); line-height: 1.7; font-size: .95rem; margin-bottom: 5px; }
+    .blog-modal__body strong { color: var(--navy); }
+    .article-card, .article-featured { cursor: pointer; }
+
+    @media (max-width: 1024px) {
+      .blog-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .article-featured { grid-template-columns: 1fr; }
+      .article-featured__img { min-height: 200px; }
+      .article-featured__body { padding: 28px 24px; }
+      .articles-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UTILITY BAR -->
+  <div class="utility-bar">
+    <div class="container">
+      <div class="utility-bar__inner">
+        <div class="utility-bar__contact">
+          <a href="tel:+525576789035" class="utility-bar__item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12.5 19.79 19.79 0 01.12 4 2 2 0 012.1 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.17 6.17l1.08-1.34a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (+52) 55 7678 9035
+          </a>
+          <a href="https://wa.me/525578583609?text=Hola%2C+me+interesa+conocer+los+productos+Ziroba." target="_blank" rel="noopener" class="utility-bar__item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967c-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Escríbenos ahora
+          </a>
+        </div>
+        <div class="utility-bar__socials">
+          <a href="https://www.facebook.com/ZirobaMX" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/zirobamexico/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="https://www.tiktok.com/@zirobamexico" target="_blank" rel="noopener" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.83a8.18 8.18 0 004.78 1.52V6.9a4.85 4.85 0 01-1.01-.21z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">
+          <img src="imagenes/zirobalogo.png" alt="Ziroba México" style="height:44px;width:auto;object-fit:contain;">
+        </a>
+        <div class="navbar__nav">
+          <a href="index.html" class="navbar__link">Inicio</a>
+          <div class="navbar__dropdown">
+            <a href="productos.html" class="navbar__link navbar__dropdown-toggle">
+              Productos
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="navbar__dropdown-menu">
+              <a href="productos.html#fibras" class="navbar__dropdown-item">
+                <img src="imagenes/iconos%20productos/fibra.png" style="width:22px;height:22px;object-fit:contain;flex-shrink:0;">
+                Fibras de Acero Inoxidable
+              </a>
+              <a href="productos.html#toallas" class="navbar__dropdown-item">
+                <img src="imagenes/iconos%20productos/toalla.png" style="width:22px;height:22px;object-fit:contain;flex-shrink:0;">
+                Toalla Exfoliante
+              </a>
+              <a href="productos.html#cotonetes" class="navbar__dropdown-item">
+                <img src="imagenes/iconos%20productos/cotonete.png" style="width:22px;height:22px;object-fit:contain;flex-shrink:0;">
+                Cotonetes de Bambú
+              </a>
+            </div>
+          </div>
+          <a href="distribuidores.html" class="navbar__link">Mayoreo</a>
+          <a href="nosotros.html" class="navbar__link">Nosotros</a>
+          <!--  <a href="donde-comprar.html" class="navbar__link">Dónde Comprar</a> -->
+          <a href="blog.html" class="navbar__link active">Blog</a>
+          <a href="contacto.html" class="navbar__link">Contacto</a>
+        </div>
+        <a href="catalogo.html" class="btn btn--primary navbar__cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Descargar Catálogo
+        </a>
+        <button class="navbar__hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="navbar__mobile">
+    <a href="index.html" class="navbar__mobile-link">Inicio</a>
+    <a href="productos.html" class="navbar__mobile-link">Productos</a>
+    <a href="distribuidores.html" class="navbar__mobile-link">Mayoreo</a>
+    <a href="nosotros.html" class="navbar__mobile-link">Nosotros</a>
+   <!-- <a href="donde-comprar.html" class="navbar__mobile-link">Dónde Comprar</a> -->
+    <a href="blog.html" class="navbar__mobile-link">Blog</a>
+    <a href="contacto.html" class="navbar__mobile-link">Contacto</a>
+    <div class="navbar__mobile-ctas">
+      <a href="catalogo.html" class="btn btn--primary" style="justify-content:center;">Descargar Catálogo</a>
+    </div>
+  </div>
+
+   <!-- HERO  -->
+  <section class="blog-hero" style="text-align:center;">
+    <div class="container">
+      <h1>Blog Ziroba: Limpieza, Belleza y Sustentabilidad</h1>
+      <p style="max-width:600px;margin-left:auto;margin-right:auto;">Guías, trucos y consejos sobre nuestros tres productos estrella: Fibra ZIROBA, Cotonetes de Bambú y Toalla Exfoliante Corporal. Porque vivir mejor empieza en casa.</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <section class="section">
+    <div class="container">
+      <div class="blog-layout">
+
+        <!-- COLUMNA PRINCIPAL -->
+        <div>
+
+          <!-- ARTÍCULO DESTACADO -->
+          <div style="margin-bottom:16px;">
+            <span class="section-label">Artículo destacado</span>
+          </div>
+          <div class="article-featured reveal" style="display:grid;" onclick="openBlogModal('toalla-guia')">
+            <div class="article-featured__img" style="background:linear-gradient(135deg,#FFF0E8,#F5A623);position:relative;overflow:hidden;">
+              🛁
+              <img src="imagenes/blog/toalla-guia.jpg" alt="Toalla Exfoliante Ziroba" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+            </div>
+            <div class="article-featured__body">
+              <div class="article-featured__meta">
+                <span class="badge badge--orange">Toalla Exfoliante</span>
+                <span class="article-card__date">12 de mayo, 2026</span>
+                <span style="font-size:.78rem;color:var(--gray);">· 6 min de lectura</span>
+              </div>
+              <h2 class="article-featured__title">Guía completa: cómo cuidar tu piel con la Toalla Exfoliante Corporal Ziroba</h2>
+              <p class="article-featured__excerpt">La técnica correcta para exfoliar según tu tipo de piel, con qué frecuencia usarla y cómo los materiales Ziroba marcan la diferencia.</p>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span class="article-card__read">
+                  Leer artículo completo
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FILTROS DE CATEGORÍA -->
+          <div style="margin: 48px 0 32px;">
+            <h3 style="margin-bottom:16px;font-size:1rem;">Filtrar por producto</h3>
+            <div class="category-filters">
+              <button class="filter-btn active" onclick="filtrarCategoria('todos', this)">Todos los artículos</button>
+              <button class="filter-btn" onclick="filtrarCategoria('fibras', this)"> Fibra ZIROBA</button>
+              <button class="filter-btn" onclick="filtrarCategoria('cotonetes', this)"> Cotonetes de Bambú</button>
+              <button class="filter-btn" onclick="filtrarCategoria('toallas', this)"> Toalla Exfoliante</button>
+            </div>
+          </div>
+
+          <!-- GRID DE ARTÍCULOS -->
+          <div class="articles-grid" id="articles-grid">
+
+            <!-- FIBRA ZIROBA -->
+            <article class="article-card reveal" data-cat="fibras" onclick="openBlogModal('parrilla')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#FFF3ED,#D9921F);position:relative;overflow:hidden;">
+                🥩<img src="imagenes/blog/parrilla.png" alt="CÃ³mo limpiar una parrilla con fibra de acero inoxidable Ziroba" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge badge--teal" style="font-size:.7rem;padding:3px 8px;">Fibra ZIROBA</span>
+                  <span class="article-card__date">15 de enero, 2026</span>
+                </div>
+                <h3 class="article-card__title">Cómo limpiar una parrilla después del asado sin esfuerzo</h3>
+                <p class="article-card__excerpt">El truco que usan los expertos para tener una parrilla brillante en 5 minutos.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <article class="article-card reveal reveal-delay-1" data-cat="fibras" onclick="openBlogModal('sartenes')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,var(--teal-pale),#80DEEA);position:relative;overflow:hidden;">
+                ✨<img src="imagenes/blog/sartenes.png" alt="Sartenes antiadherentes limpieza con fibra Ziroba" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge badge--teal" style="font-size:.7rem;padding:3px 8px;">Fibra ZIROBA</span>
+                  <span class="article-card__date">25 de febrero, 2026</span>
+                </div>
+                <h3 class="article-card__title">5 errores que cometes al limpiar tus sartenes antiadherentes</h3>
+                <p class="article-card__excerpt">Los errores más comunes que dañan el recubrimiento y cómo evitarlos.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <article class="article-card reveal reveal-delay-2" data-cat="fibras" onclick="openBlogModal('comal')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#E8F4FD,#1A3A5C);position:relative;overflow:hidden;">
+                🫕<img src="imagenes/blog/comal.png" alt="Limpiar comal sin rayar con fibra de acero Ziroba" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge badge--teal" style="font-size:.7rem;padding:3px 8px;">Fibra ZIROBA</span>
+                  <span class="article-card__date">10 de febrero, 2026</span>
+                </div>
+                <h3 class="article-card__title">El secreto para limpiar el comal sin rayarlo</h3>
+                <p class="article-card__excerpt">La técnica correcta para dejar tu comal impecable en minutos.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <article class="article-card reveal" data-cat="fibras" onclick="openBlogModal('fibra-vs-plastico')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#FFF3ED,#FFAB76);position:relative;overflow:hidden;">
+                🧽<img src="imagenes/blog/fibravsplstico.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge badge--teal" style="font-size:.7rem;padding:3px 8px;">Fibra ZIROBA</span>
+                  <span class="article-card__date">28 de enero, 2026</span>
+                </div>
+                <h3 class="article-card__title">Fibra de acero ZIROBA vs. esponja: ¿cuál limpia mejor?</h3>
+                <p class="article-card__excerpt">Comparación honesta: cuándo usar cada una y por qué el acero casi siempre gana.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <article class="article-card reveal reveal-delay-1" data-cat="fibras" onclick="openBlogModal('frecuencia-fibra')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#E8F4FD,#26C6DA);position:relative;overflow:hidden;">
+                🔬<img src="imagenes/blog/fracuenciafibra.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge badge--teal" style="font-size:.7rem;padding:3px 8px;">Fibra ZIROBA</span>
+                  <span class="article-card__date">8 de diciembre, 2025</span>
+                </div>
+                <h3 class="article-card__title">¿Con qué frecuencia debes cambiar tu fibra de cocina?</h3>
+                <p class="article-card__excerpt">Una fibra vieja es un foco de bacterias. Descubre cada cuánto cambiarla.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <!-- COTONETES DE BAMBÚ -->
+            <article class="article-card reveal reveal-delay-2" data-cat="cotonetes" onclick="openBlogModal('cotonetes-bambu')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#F0FFF4,#2ECC71);position:relative;overflow:hidden;">
+                🌿<img src="imagenes/blog/cotonetes-bambu.png" alt="Cotonetes de bambÃº Ziroba biodegradables sostenibles" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge" style="background:rgba(46,204,113,.1);color:#27ae60;font-size:.7rem;padding:3px 8px;">Cotonetes</span>
+                  <span class="article-card__date">5 de diciembre, 2025</span>
+                </div>
+                <h3 class="article-card__title">¿Por qué cambiar tus cotonetes de plástico por bambú?</h3>
+                <p class="article-card__excerpt">El impacto ambiental de este pequeño cambio y sus beneficios para tu salud.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <article class="article-card reveal" data-cat="cotonetes" onclick="openBlogModal('10-usos-cotonetes')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#E8F5E9,#66BB6A);position:relative;overflow:hidden;">
+                ♻️<img src="imagenes/blog/10-usos-cotonetes.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge" style="background:rgba(46,204,113,.1);color:#27ae60;font-size:.7rem;padding:3px 8px;">Cotonetes</span>
+                  <span class="article-card__date">18 de diciembre, 2025</span>
+                </div>
+                <h3 class="article-card__title">10 usos de los cotonetes de bambú que probablemente no conocías</h3>
+                <p class="article-card__excerpt">Más allá del oído: maquillaje, electrónicos, bebés y mucho más.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <article class="article-card reveal reveal-delay-1" data-cat="cotonetes" onclick="openBlogModal('bebes-cotonetes')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#F0FFF4,#A5D6A7);position:relative;overflow:hidden;">
+                👶<img src="imagenes/blog/bebes-cotonetes.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge" style="background:rgba(46,204,113,.1);color:#27ae60;font-size:.7rem;padding:3px 8px;">Cotonetes</span>
+                  <span class="article-card__date">3 de febrero, 2026</span>
+                </div>
+                <h3 class="article-card__title">Bebés y cotonetes de bambú: la opción más segura y natural</h3>
+                <p class="article-card__excerpt">Bambú libre de toxinas: la elección perfecta para el cuidado más delicado.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <!-- TOALLA EXFOLIANTE -->
+            <article class="article-card reveal reveal-delay-2" data-cat="toallas" onclick="openBlogModal('toalla-paso-a-paso')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#FFF0E8,#F5A623);position:relative;overflow:hidden;">
+                🛁<img src="imagenes/blog/toalla-paso-a-paso.jpg" alt="CÃ³mo usar la toalla exfoliante corporal Ziroba paso a paso" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge badge--orange" style="font-size:.7rem;padding:3px 8px;">Toalla Exfoliante</span>
+                  <span class="article-card__date">22 de abril, 2026</span>
+                </div>
+                <h3 class="article-card__title">Cómo usar la Toalla Exfoliante Corporal Ziroba paso a paso</h3>
+                <p class="article-card__excerpt">Técnica, frecuencia de uso y cómo adaptarla a tu tipo de piel.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <article class="article-card reveal" data-cat="toallas" onclick="openBlogModal('exfoliacion-beneficios')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#FFF3ED,#FFCC99);position:relative;overflow:hidden;">
+                🧖<img src="imagenes/blog/exfoliacion-beneficios.png" alt="Beneficios de la exfoliaciÃ³n corporal con toalla Ziroba" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge badge--orange" style="font-size:.7rem;padding:3px 8px;">Toalla Exfoliante</span>
+                  <span class="article-card__date">10 de marzo, 2026</span>
+                </div>
+                <h3 class="article-card__title">Beneficios de la exfoliación corporal regular para tu piel</h3>
+                <p class="article-card__excerpt">Cómo la exfoliación mejora la circulación, hidratación y luminosidad.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <article class="article-card reveal reveal-delay-1" data-cat="toallas" onclick="openBlogModal('toalla-vs-esponja')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#FFF8F0,#E8840A);position:relative;overflow:hidden;">
+                🆚<img src="imagenes/blog/toalla-vs-esponja.png" alt="Toalla exfoliante Ziroba vs esponja de baÃ±o comparativa" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge badge--orange" style="font-size:.7rem;padding:3px 8px;">Toalla Exfoliante</span>
+                  <span class="article-card__date">20 de febrero, 2026</span>
+                </div>
+                <h3 class="article-card__title">Toalla exfoliante vs. esponja de baño: ¿cuál cuida mejor tu piel?</h3>
+                <p class="article-card__excerpt">Comparativa directa: exfoliación, higiene, durabilidad y precio.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+            <article class="article-card reveal reveal-delay-2" data-cat="cotonetes" onclick="openBlogModal('cotonete-compostable')">
+              <div class="article-card__img" style="background:linear-gradient(135deg,#E8F5E9,#388E3C);position:relative;overflow:hidden;">
+                🌱<img src="imagenes/blog/cotonete-compostable.png" alt="Cotonete compostable Ziroba ciclo de vida biodegradable" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+              </div>
+              <div class="article-card__body">
+                <div class="article-card__meta">
+                  <span class="badge" style="background:rgba(46,204,113,.1);color:#27ae60;font-size:.7rem;padding:3px 8px;">Cotonetes</span>
+                  <span class="article-card__date">28 de marzo, 2026</span>
+                </div>
+                <h3 class="article-card__title">¿Qué sucede con un cotonete compostable después de usarlo?</h3>
+                <p class="article-card__excerpt">El ciclo completo: del uso diario al compost que nutre la tierra.</p>
+                <span class="article-card__read">Leer más <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- MENSAJE SIN RESULTADOS -->
+          <div id="no-articles" style="display:none;text-align:center;padding:64px 0;">
+            <div style="font-size:3rem;margin-bottom:16px;">📝</div>
+            <h3 style="margin-bottom:8px;">Próximamente más artículos</h3>
+            <p>Estamos preparando contenido en esta categoría. Regresa pronto.</p>
+          </div>
+
+          <!-- PAGINACIÓN (generada dinámicamente por JS) -->
+          <div class="pagination" id="pagination"></div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+          <!-- Búsqueda -->
+          <div class="sidebar-card">
+            <div class="sidebar-card__title">Buscar artículos</div>
+            <div style="position:relative;">
+              <input type="text" class="form-control" placeholder="Buscar..." id="blog-search" style="padding-right:44px;">
+              <button onclick="buscarArticulos()" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--teal);cursor:pointer;padding:4px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Artículos populares -->
+          <div class="sidebar-card">
+            <div class="sidebar-card__title">Artículos populares</div>
+            <div style="display:flex;flex-direction:column;gap:0;">
+              <a href="javascript:void(0)" onclick="openBlogModal('parrilla')" style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--gray-light);text-decoration:none;cursor:pointer;">
+                <div style="width:56px;height:56px;background:linear-gradient(135deg,#FFF3ED,#D9921F);border-radius:8px;overflow:hidden;position:relative;flex-shrink:0;">
+                  <img src="imagenes/blog/parrilla.png" alt="CÃ³mo limpiar una parrilla con fibra de acero inoxidable Ziroba" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+                </div>
+                <div>
+                  <div style="font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:3px;">Cómo limpiar parrilla después del asado</div>
+                  <div style="font-size:.75rem;color:var(--gray);">15 ene, 2026</div>
+                </div>
+              </a>
+              <a href="javascript:void(0)" onclick="openBlogModal('sartenes')" style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--gray-light);text-decoration:none;cursor:pointer;">
+                <div style="width:56px;height:56px;background:linear-gradient(135deg,var(--teal-pale),#80DEEA);border-radius:8px;overflow:hidden;position:relative;flex-shrink:0;">
+                  <img src="imagenes/blog/sartenes.png" alt="Sartenes antiadherentes limpieza con fibra Ziroba" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+                </div>
+                <div>
+                  <div style="font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:3px;">5 errores limpiando sartenes antiadherentes</div>
+                  <div style="font-size:.75rem;color:var(--gray);">25 feb, 2026</div>
+                </div>
+              </a>
+              <a href="javascript:void(0)" onclick="openBlogModal('cotonetes-bambu')" style="display:flex;gap:12px;padding:12px 0;text-decoration:none;cursor:pointer;">
+                <div style="width:56px;height:56px;background:linear-gradient(135deg,#F0FFF4,#2ECC71);border-radius:8px;overflow:hidden;position:relative;flex-shrink:0;">
+                  <img src="imagenes/blog/cotonetes-bambu.png" alt="Cotonetes de bambÃº Ziroba biodegradables sostenibles" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+                </div>
+                <div>
+                  <div style="font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:3px;">Por qué cambiar a cotonetes de bambú</div>
+                  <div style="font-size:.75rem;color:var(--gray);">5 dic, 2025</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+
+          <!-- CTA productos -->
+          <div style="background:linear-gradient(135deg,var(--navy),#2D2D5E);border-radius:var(--radius);padding:28px;color:white;text-align:center;">
+            <div style="margin-bottom:10px;display:flex;justify-content:center;gap:10px;">
+              <img src="imagenes/iconos%20productos/fibra.png" alt="Fibra" style="width:32px;height:32px;object-fit:contain;">
+              <img src="imagenes/iconos%20productos/cotonete.png" alt="Cotonete" style="width:32px;height:32px;object-fit:contain;">
+              <img src="imagenes/iconos%20productos/toalla.png" alt="Toalla" style="width:32px;height:32px;object-fit:contain;">
+            </div>
+            <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;margin-bottom:8px;">Línea completa Ziroba</div>
+            <p style="color:rgba(255,255,255,.8);font-size:.82rem;margin-bottom:16px;">Fibras de acero, cotonetes de bambú y toalla exfoliante. Calidad 100% mexicana.</p>
+            <a href="productos.html#fibras" class="btn btn--sm" style="width:100%;justify-content:center;background:var(--teal);color:white;margin-bottom:6px;">
+              <img src="imagenes/iconos%20productos/fibra.png" alt="" style="width:16px;height:16px;object-fit:contain;"> Fibra ZIROBA
+            </a>
+            <a href="productos.html#cotonetes" class="btn btn--sm" style="width:100%;justify-content:center;background:#27ae60;color:white;margin-bottom:6px;">
+              <img src="imagenes/iconos%20productos/cotonete.png" alt="" style="width:16px;height:16px;object-fit:contain;"> Cotonetes
+            </a>
+            <a href="productos.html#toallas" class="btn btn--sm" style="width:100%;justify-content:center;background:var(--orange);color:white;">
+              <img src="imagenes/iconos%20productos/toalla.png" alt="" style="width:16px;height:16px;object-fit:contain;"> Toalla Exfoliante
+            </a>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG MODAL -->
+  <div id="blog-modal-overlay" class="blog-modal-overlay" onclick="if(event.target===this)closeBlogModal()">
+    <div class="blog-modal">
+      <button class="blog-modal__close" onclick="closeBlogModal()" aria-label="Cerrar">✕</button>
+      <div class="blog-modal__img" id="bm-img"></div>
+      <div class="blog-modal__body">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px;" id="bm-meta"></div>
+        <h2 id="bm-title"></h2>
+        <div id="bm-content"></div>
+        <div style="margin-top:28px;">
+          <a id="bm-cta" href="#" class="btn btn--primary">Ver producto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">
+            <img src="imagenes/zirobalogo.png" alt="Ziroba México" style="height:48px;width:auto;object-fit:contain;">
+          </div>
+          <p class="footer__desc">La Reina del Hogar. Empresa dedicada a la proyección del comercio en América Latina, con importación, exportación y distribución de productos de calidad para mayoristas y tiendas.</p>
+          <div class="footer__encuentranos">
+            <p style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-bottom:6px;">Encuéntranos en</p>
+            <a href="https://www.amazon.com.mx/s?srs=121147690011&rh=p_89%3AZIROBA" class="amazon" target="_blank" rel="noopener">
+              <img src="imagenes/iconos%20productos/amazon.png" alt="Amazon" style="height:28px;width:auto;object-fit:contain;">
+            </a>
+            <a href="https://listado.mercadolibre.com.mx/zacate-corporal-ziroba#D[A:Zacate%20Corporal%20Ziroba]" class="ml" target="_blank" rel="noopener">
+              <img src="imagenes/iconos%20productos/MERCADO%20LIBRE.png" alt="Mercado Libre" style="height:28px;width:auto;object-fit:contain;">
+            </a>
+          </div>
+          <div class="footer__socials">
+            <a href="https://www.facebook.com/ZirobaMX" target="_blank" rel="noopener" class="footer__social-btn" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/zirobamexico/" target="_blank" rel="noopener" class="footer__social-btn" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@zirobamexico" target="_blank" rel="noopener" class="footer__social-btn" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.83a8.18 8.18 0 004.78 1.52V6.9a4.85 4.85 0 01-1.01-.21z"/></svg>
+            </a>
+            <a href="https://wa.me/525578583609" class="footer__social-btn" aria-label="WhatsApp" style="background:rgba(37,211,102,.15);color:#25D366;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Navegación</div>
+          <ul class="footer__links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="distribuidores.html">Mayoreo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+           <!-- <li><a href="donde-comprar.html">Dónde Comprar</a></li> -->
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Productos</div>
+          <ul class="footer__links">
+            <li><a href="productos.html#fibras">Fibras de Acero Inoxidable</a></li>
+            <li><a href="productos.html#cotonetes">Cotonetes de Bambú</a></li>
+            <li><a href="productos.html#toallas">Toalla Exfoliante</a></li>
+            <li><a href="catalogo.html">Catálogo 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Contacto</div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <a href="https://maps.app.goo.gl/gzKfzwtEmLWUvBBd7" target="_blank" rel="noopener" style="color:inherit;">Vicente Guerrero 58, Urbana Ixhuatepec,<br>Ecatepec, Estado de México</a>
+          </div>
+          <div class="footer__contact-item" style="align-items:flex-start;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" style="width:16px;height:16px;flex-shrink:0;margin-top:3px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12.5 19.79 19.79 0 01.12 4 2 2 0 012.1 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.17 6.17l1.08-1.34a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+              <a href="tel:+525576789035" style="color:inherit;white-space:nowrap;">(+52) 55 7678 9035</a>
+              <a href="tel:+525576789036" style="color:inherit;white-space:nowrap;">(+52) 55 7678 9036</a>
+              <a href="tel:+525576789037" style="color:inherit;white-space:nowrap;">(+52) 55 7678 9037</a>
+              <a href="tel:+525576789038" style="color:inherit;white-space:nowrap;">(+52) 55 7678 9038</a>
+              
+            </div>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:ventas@zirobamexico.com" style="color:inherit;">ventas@zirobamexico.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(0,0,0,.2);">
+      <div class="container">
+        <div class="footer__bottom">
+          <span>© 2026 Ziroba México · La Reina del Hogar</span>
+          <a href="#">Política de Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/525578583609?text=Hola%2C+me+interesa+conocer+los+productos+Ziroba." target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967c-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  // ─── Datos de artículos ────────────────────────────────────────────────────
+  const BLOG_ARTICLES = {
+    'toalla-guia': {
+      title: 'Guía completa: cómo cuidar tu piel con la Toalla Exfoliante Corporal Ziroba',
+      category: 'Toalla Exfoliante', badgeClass: 'badge--orange',
+      date: '12 de mayo, 2026', readTime: '6 min de lectura',
+      imgBg: 'linear-gradient(135deg,#FFF0E8,#F5A623)', emoji: '🛁',
+      imgSrc: 'imagenes/blog/toalla-guia.png',
+      ctaText: 'Ver Toalla Exfoliante', ctaLink: 'productos.html#toallas',
+      content: `<p>La exfoliación corporal es uno de los pasos más importantes del cuidado personal que muchos pasan por alto. La Toalla Exfoliante Corporal Ziroba fue diseñada para hacer este proceso sencillo y accesible para toda la familia.</p>
+<h3>¿Por qué exfoliar tu piel?</h3>
+<p>La piel se renueva constantemente y las células muertas se acumulan en la superficie, opacando la apariencia y obstruyendo poros. La exfoliación regular elimina esa capa y revela la piel más suave y luminosa que hay debajo.</p>
+<h3>La técnica correcta paso a paso</h3>
+<ol><li>Moja bien tu piel con agua tibia (no caliente) para abrir los poros</li><li>Aplica tu jabón o gel de baño favorito sobre la toalla</li><li>Realiza movimientos circulares suaves, comenzando desde los pies hacia arriba</li><li>En zonas sensibles usa presión mínima</li><li>Enjuaga con agua fría para cerrar los poros</li><li>Aplica crema hidratante inmediatamente — tu piel la absorberá mucho mejor</li></ol>
+<h3>¿Con qué frecuencia usarla?</h3>
+<ul><li><strong>Piel normal:</strong> 2–3 veces por semana</li><li><strong>Piel seca o sensible:</strong> 1–2 veces por semana</li><li><strong>Piel grasa:</strong> hasta 3 veces por semana</li></ul>
+<h3>¿Cómo cuidar tu Toalla Ziroba?</h3>
+<p>Enjuágala bien después de cada uso y déjala secar al aire libre. Lávala con jabón suave una vez a la semana. Una Toalla Ziroba bien cuidada dura meses más que una esponja ordinaria.</p>`
+    },
+    'parrilla': {
+      title: 'Cómo limpiar una parrilla después del asado sin esfuerzo',
+      category: 'Fibra ZIROBA', badgeClass: 'badge--teal',
+      date: '15 de enero, 2026', readTime: '5 min de lectura',
+      imgBg: 'linear-gradient(135deg,#FFF3ED,#D9921F)', emoji: '🥩',
+      imgSrc: 'imagenes/blog/parrilla.png',
+      ctaText: 'Ver Fibra ZIROBA', ctaLink: 'productos.html#fibras',
+      content: `<p>El error más común al limpiar una parrilla es dejarla enfriar completamente. Cuando la grasa se solidifica se vuelve mucho más difícil de remover. El momento ideal es cuando la parrilla está tibia.</p>
+<h3>El método paso a paso</h3>
+<ol><li>Espera a que la parrilla esté tibia — lo suficiente para manipularla</li><li>Usa la Fibra ZIROBA directamente sobre las rejillas</li><li>Aplica un poco de jabón desengrasante en la fibra</li><li>Frota en la dirección de las rejillas para evitar incrustar más residuos</li><li>Para manchas muy pegadas, deja reposar agua caliente con unas gotas de limón 5 minutos antes</li><li>Enjuaga con agua abundante</li></ol>
+<h3>¿Por qué el acero inoxidable funciona mejor?</h3>
+<p>El acero inoxidable tiene una dureza mayor que el carbón carbonizado, permitiendo desprenderlo sin dañar el metal de la rejilla. Las esponjas plásticas simplemente redistribuyen la grasa sin eliminarla.</p>
+<h3>Tip extra</h3>
+<p>Si tu parrilla es de acero inoxidable premium, usa una Fibra ZIROBA de calibre fino para no marcar el acabado. Para parrillas de hierro fundido, el calibre estándar funciona perfecto.</p>`
+    },
+    'sartenes': {
+      title: '5 errores que cometes al limpiar tus sartenes antiadherentes',
+      category: 'Fibra ZIROBA', badgeClass: 'badge--teal',
+      date: '25 de febrero, 2026', readTime: '4 min de lectura',
+      imgBg: 'linear-gradient(135deg,var(--teal-pale),#80DEEA)', emoji: '✨',
+      imgSrc: 'imagenes/blog/sartenes.png',
+      ctaText: 'Ver Fibra ZIROBA', ctaLink: 'productos.html#fibras',
+      content: `<h3>Error #1: Usar fibras de metal en sartén antiadherente</h3>
+<p>El teflón y otros recubrimientos se rayan con materiales abrasivos. Para sartenes antiadherentes usa esponja suave. La Fibra ZIROBA es ideal para hierro, acero inoxidable y aluminio sin recubrimiento.</p>
+<h3>Error #2: Lavar con agua fría inmediatamente</h3>
+<p>El cambio brusco de temperatura puede deformar el sartén. Deja que baje la temperatura antes de lavarlo.</p>
+<h3>Error #3: Dejar agua después del lavado</h3>
+<p>La humedad residual puede oxidar los bordes metálicos. Siempre seca tu sartén completamente.</p>
+<h3>Error #4: Usar detergentes muy agresivos</h3>
+<p>Un jabón suave es suficiente. Los desengrasantes industriales degradan gradualmente los recubrimientos.</p>
+<h3>Error #5: Apilarlos sin protección</h3>
+<p>Pon un trapo o papel entre sartenes para evitar que se rayen entre sí.</p>
+<h3>¿Cuándo SÍ usar la Fibra ZIROBA?</h3>
+<ul><li>Sartenes de hierro fundido</li><li>Sartenes de acero inoxidable sin recubrimiento</li><li>Sartenes de aluminio con terminado satinado</li><li>Parrillas y comales de hierro</li></ul>`
+    },
+    'comal': {
+      title: 'El secreto para limpiar el comal sin rayarlo',
+      category: 'Fibra ZIROBA', badgeClass: 'badge--teal',
+      date: '10 de febrero, 2026', readTime: '4 min de lectura',
+      imgBg: 'linear-gradient(135deg,#E8F4FD,#1A3A5C)', emoji: '🫕',
+      imgSrc: 'imagenes/blog/comal.png',
+      ctaText: 'Ver Fibra ZIROBA', ctaLink: 'productos.html#fibras',
+      content: `<p>El comal acumula residuos de tortillas quemadas, salsa carbonizada y grasa. Es una de las superficies más difíciles de limpiar precisamente porque trabaja a temperaturas muy altas.</p>
+<h3>La técnica correcta</h3>
+<ol><li>Deja enfriar el comal hasta que puedas tocarlo con la mano</li><li>Pon agua tibia sobre él y deja reposar 3–5 minutos para ablandar los residuos</li><li>Con la Fibra ZIROBA y jabón, frota en movimientos lineales</li><li>Para manchas muy incrustadas, espolvorea sal gruesa como abrasivo natural adicional</li><li>Enjuaga con agua caliente</li></ol>
+<h3>¿Y el comal de barro?</h3>
+<p>Para comales de barro, nunca uses fibra de acero — puede dañar la superficie porosa. Usa una fibra vegetal natural. La Fibra ZIROBA es perfecta para comales de hierro o aluminio.</p>
+<h3>Consejo de mantenimiento</h3>
+<p>Después de lavarlo y secarlo, pasa un trapo con una gota de aceite vegetal. Esto crea una capa protectora que previene la oxidación y facilita la limpieza la próxima vez.</p>`
+    },
+    'fibra-vs-plastico': {
+      title: 'Fibra de acero vs. fibra de plástico: ¿cuál limpia mejor?',
+      category: 'Fibra ZIROBA', badgeClass: 'badge--teal',
+      date: '28 de enero, 2026', readTime: '5 min de lectura',
+      imgBg: 'linear-gradient(135deg,#FFF3ED,#FFAB76)', emoji: '🧽',
+      imgSrc: 'imagenes/blog/fibravsplstico.png',
+      ctaText: 'Ver Fibra ZIROBA', ctaLink: 'productos.html#fibras',
+      content: `<p>¿Cuál de las dos opciones más populares realmente limpia mejor? Aquí va la comparación honesta.</p>
+<h3>Poder de limpieza</h3>
+<p>El acero gana. Su dureza permite remover grasa carbonizada y residuos incrustados que el plástico no puede eliminar. El plástico funciona solo para limpieza ligera cotidiana.</p>
+<h3>Bacterias e higiene</h3>
+<p>El acero inoxidable no es poroso, por lo que las bacterias no tienen dónde adherirse. El plástico retiene humedad y puede ser foco de bacterias en 24–48 horas.</p>
+<h3>Durabilidad</h3>
+<p>Una Fibra ZIROBA de acero dura entre 3 y 6 veces más que una esponja de plástico equivalente. Esto también significa menos basura plástica generada.</p>
+<h3>¿Cuándo elegir plástico?</h3>
+<p>Solo para superficies muy delicadas (vidrio, cerámica de diseño, teflón) donde el metal podría rayar. Para todo lo demás, el acero inoxidable es superior.</p>
+<h3>El veredicto</h3>
+<ul><li><strong>Limpieza general de cocina:</strong> Fibra de acero ZIROBA</li><li><strong>Sartenes antiadherentes o vidrio:</strong> Esponja suave</li><li><strong>Parrilla, comal, ollas:</strong> Fibra de acero ZIROBA siempre</li></ul>`
+    },
+    'frecuencia-fibra': {
+      title: '¿Con qué frecuencia debes cambiar tu fibra de cocina?',
+      category: 'Fibra ZIROBA', badgeClass: 'badge--teal',
+      date: '8 de diciembre, 2025', readTime: '3 min de lectura',
+      imgBg: 'linear-gradient(135deg,#E8F4FD,#26C6DA)', emoji: '🔬',
+      imgSrc: 'imagenes/blog/fracuenciafibra.png',
+      ctaText: 'Ver Fibra ZIROBA', ctaLink: 'productos.html#fibras',
+      content: `<p>Una fibra de cocina vieja no solo pierde efectividad — se convierte en un foco de bacterias. Saber cuándo cambiarla puede marcar una diferencia real en la higiene de tu hogar.</p>
+<h3>Las señales de alerta</h3>
+<ul><li>Olor desagradable incluso después de lavarla</li><li>Color oscurecido que no desaparece</li><li>Fibras sueltas o deshilachadas</li><li>Pérdida de efectividad para limpiar</li></ul>
+<h3>¿Cada cuánto cambiarla?</h3>
+<p>Cuando notes alguna señal de alerta, o después de 4–6 semanas de uso intensivo diario con la Fibra ZIROBA (vs. 1–2 semanas con fibra de plástico).</p>
+<h3>Cómo extender la vida de tu fibra</h3>
+<ul><li>Enjuágala muy bien después de cada uso</li><li>Exprime el exceso de agua y guárdala en lugar ventilado</li><li>Una vez a la semana: déjala reposar 10 minutos en agua con vinagre blanco para eliminar bacterias y olores</li></ul>`
+    },
+    'cotonetes-bambu': {
+      title: '¿Por qué cambiar tus cotonetes de plástico por bambú?',
+      category: 'Cotonetes de Bambú', badgeStyle: 'background:rgba(46,204,113,.1);color:#27ae60;',
+      date: '5 de diciembre, 2025', readTime: '4 min de lectura',
+      imgBg: 'linear-gradient(135deg,#F0FFF4,#2ECC71)', emoji: '🌿',
+      imgSrc: 'imagenes/blog/cotonetes-bambu.png',
+      ctaText: 'Ver Cotonetes de Bambú', ctaLink: 'productos.html#cotonetes',
+      content: `<p>Más de 1.5 billones de cotonetes de plástico se producen cada año. Son tan ligeros que el viento los lleva desde los basureros hasta los ríos y océanos, donde tardan hasta 400 años en degradarse.</p>
+<h3>El bambú como solución</h3>
+<p>El bambú es una de las plantas de crecimiento más rápido del planeta — puede crecer hasta 91 cm en un solo día. Es biodegradable y no requiere pesticidas ni fertilizantes.</p>
+<h3>Beneficios para tu salud</h3>
+<p>Los cotonetes de plástico pueden liberar micropartículas plásticas durante el uso. El bambú es completamente natural y libre de toxinas, BPA y ftalatos.</p>
+<h3>¿Se limpian igual de bien?</h3>
+<p>Sí. La punta de algodón 100% es idéntica en ambos casos. El bambú ofrece mejor agarre y mayor resistencia que muchos mangos de plástico delgados.</p>
+<h3>Un pequeño cambio, un gran impacto</h3>
+<p>Si cada familia mexicana cambiara solo sus cotonetes a bambú, se evitaría la generación de toneladas de plástico al año. Es uno de los cambios más fáciles y económicos que puedes hacer.</p>`
+    },
+    '10-usos-cotonetes': {
+      title: '10 usos de los cotonetes de bambú que probablemente no conocías',
+      category: 'Cotonetes de Bambú', badgeStyle: 'background:rgba(46,204,113,.1);color:#27ae60;',
+      date: '18 de diciembre, 2025', readTime: '5 min de lectura',
+      imgBg: 'linear-gradient(135deg,#E8F5E9,#66BB6A)', emoji: '♻️',
+      imgSrc: 'imagenes/blog/10-usos-cotonetes.png',
+      ctaText: 'Ver Cotonetes de Bambú', ctaLink: 'productos.html#cotonetes',
+      content: `<p>El cotonete de bambú Ziroba es mucho más que un accesorio de higiene personal. Aquí van 10 usos que te sorprenderán:</p>
+<ol><li><strong>Limpieza de oídos:</strong> El uso clásico, con presión suave en la parte exterior.</li><li><strong>Corrección de maquillaje:</strong> Perfecto para corregir el delineador o el labial sin empezar de nuevo.</li><li><strong>Limpieza de teclado:</strong> Húmedece con alcohol isopropílico y limpia entre las teclas.</li><li><strong>Cuidado de bebés:</strong> Para limpiar el ombligo, pliegues de piel o detrás de las orejas.</li><li><strong>Limpieza de joyas:</strong> Llega a los rincones más pequeños de tus anillos y cadenas.</li><li><strong>Arreglos de uñas:</strong> Para limpiar el esmalte derramado antes de que seque.</li><li><strong>Puertos de electrónicos:</strong> USB, auriculares, cargadores — el cotonete llega donde ningún trapo puede.</li><li><strong>Aplicación de productos capilares:</strong> Para tratar con precisión la línea del cabello.</li><li><strong>Primeros auxilios:</strong> Para aplicar antiséptico en heridas pequeñas.</li><li><strong>Arte y manualidades:</strong> Sellos, degradados de pintura, detalles finos — los niños lo adoran.</li></ol>`
+    },
+    'bebes-cotonetes': {
+      title: 'Bebés y cotonetes de bambú: la opción más segura y natural',
+      category: 'Cotonetes de Bambú', badgeStyle: 'background:rgba(46,204,113,.1);color:#27ae60;',
+      date: '3 de febrero, 2026', readTime: '4 min de lectura',
+      imgBg: 'linear-gradient(135deg,#F0FFF4,#A5D6A7)', emoji: '👶',
+      imgSrc: 'imagenes/blog/bebes-cotonetes.png',
+      ctaText: 'Ver Cotonetes de Bambú', ctaLink: 'productos.html#cotonetes',
+      content: `<p>La piel de un bebé es entre 5 y 7 veces más delgada que la de un adulto. Es mucho más sensible a tóxicos, abrasivos e irritantes. Por eso, el material del cotonete importa más de lo que parece.</p>
+<h3>El bambú es la elección natural</h3>
+<p>El bambú tiene propiedades antibacteriales naturales y no contiene BPA, ftalatos ni otros plásticos que podrían irritar la delicada piel de tu bebé.</p>
+<h3>Usos seguros en bebés</h3>
+<ul><li>Limpieza del ombligo durante los primeros días de vida</li><li>Pliegues del cuello, axila e ingle donde la humedad se acumula</li><li>Detrás de las orejas</li><li>Limpieza suave de la nariz exterior</li><li>Aplicación de crema en zonas pequeñas y precisas</li></ul>
+<h3>¿Qué NO hacer</h3>
+<ul><li>Nunca insertes el cotonete dentro del canal auditivo de un bebé</li><li>No uses cotonetes mojados con productos químicos fuertes sobre la piel del bebé</li></ul>
+<h3>La opinión de los pediatras</h3>
+<p>Cada vez más pediatras recomiendan cotonetes de bambú por su menor impacto ambiental y su composición natural. Es una inversión mínima que hace una diferencia real.</p>`
+    },
+    'toalla-paso-a-paso': {
+      title: 'Cómo usar la Toalla Exfoliante Corporal Ziroba paso a paso',
+      category: 'Toalla Exfoliante', badgeClass: 'badge--orange',
+      date: '22 de abril, 2026', readTime: '5 min de lectura',
+      imgBg: 'linear-gradient(135deg,#FFF0E8,#F5A623)', emoji: '🛁',
+      imgSrc: 'imagenes/blog/toalla-paso-a-paso.jpg',
+      ctaText: 'Ver Toalla Exfoliante', ctaLink: 'productos.html#toallas',
+      content: `<p>Con la técnica correcta, la Toalla Exfoliante Ziroba puede transformar la textura y apariencia de tu piel en pocas semanas.</p>
+<h3>Preparación (2 minutos)</h3>
+<p>Dúchate con agua tibia durante al menos 3 minutos. El calor abre los poros y ablanda las células muertas, haciendo la exfoliación más efectiva.</p>
+<h3>La técnica de los 3 pasos</h3>
+<ol><li><strong>Jabona la toalla</strong> con tu gel favorito. Produce espuma abundante con poca cantidad.</li><li><strong>Frota con movimientos circulares</strong> de abajo hacia arriba. Presión moderada, nunca al punto de irritar.</li><li><strong>Zonas especiales:</strong> codos, rodillas, talones y espalda acumulan más células muertas. Dedica tiempo extra ahí.</li></ol>
+<h3>Después de la exfoliación</h3>
+<ul><li>Enjuaga con agua tibia y luego un chorro de agua fría para cerrar los poros</li><li>Sécate sin frotar — da toquecitos suaves</li><li>Aplica crema hidratante inmediatamente para máxima absorción</li></ul>
+<h3>Resultados visibles desde</h3>
+<ul><li><strong>1ª sesión:</strong> piel más suave al tacto</li><li><strong>1 semana:</strong> tono más uniforme</li><li><strong>3 semanas:</strong> piel claramente más luminosa</li></ul>`
+    },
+    'exfoliacion-beneficios': {
+      title: 'Beneficios de la exfoliación corporal regular para tu piel',
+      category: 'Toalla Exfoliante', badgeClass: 'badge--orange',
+      date: '10 de marzo, 2026', readTime: '5 min de lectura',
+      imgBg: 'linear-gradient(135deg,#FFF3ED,#FFCC99)', emoji: '🧖',
+      imgSrc: 'imagenes/blog/exfoliacion-beneficios.png',
+      ctaText: 'Ver Toalla Exfoliante', ctaLink: 'productos.html#toallas',
+      content: `<p>La piel se renueva en ciclos de 28–40 días. A medida que envejecemos, este proceso se ralentiza. La exfoliación manual lo acelera, manteniendo la piel joven y saludable.</p>
+<h3>Beneficio #1: Piel más luminosa</h3>
+<p>Al retirar las células muertas, la piel refleja mejor la luz y luce más brillante y uniforme.</p>
+<h3>Beneficio #2: Mejor absorción de hidratantes</h3>
+<p>Una piel exfoliada absorbe hasta un 30% más de crema hidratante. Tu inversión en cuidado personal se vuelve más efectiva.</p>
+<h3>Beneficio #3: Reducción de manchas</h3>
+<p>La exfoliación regular ayuda a difuminar gradualmente las manchas oscuras por exposición solar.</p>
+<h3>Beneficio #4: Prevención de vellos encarnados</h3>
+<p>Especialmente relevante para zonas de depilación. La exfoliación libera los vellos antes de que se encamen.</p>
+<h3>Beneficio #5: Mejora la circulación</h3>
+<p>Los movimientos circulares activan la circulación sanguínea, ayudando a reducir celulitis y mejorar el tono general.</p>
+<h3>¿Con qué frecuencia?</h3>
+<ul><li><strong>Piel normal/mixta:</strong> 2–3 veces por semana</li><li><strong>Piel sensible:</strong> 1 vez por semana</li><li><strong>Piel con acné activo:</strong> evitar zonas afectadas</li></ul>`
+    },
+    'cotonete-compostable': {
+      title: '¿Qué sucede con un cotonete compostable después de usarlo?',
+      category: 'Cotonetes de Bambú', badgeStyle: 'background:rgba(46,204,113,.1);color:#27ae60;',
+      date: '28 de marzo, 2026', readTime: '4 min de lectura',
+      imgBg: 'linear-gradient(135deg,#E8F5E9,#388E3C)', emoji: '🌱',
+      imgSrc: 'imagenes/blog/cotonete-compostable.png',
+      ctaText: 'Ver Cotonetes de Bambú', ctaLink: 'productos.html#cotonetes',
+      content: `<p>Cada día utilizamos productos de higiene personal que terminan en la basura, pero pocas veces nos preguntamos qué ocurre con ellos después. Los cotonetes tradicionales están fabricados con plástico, un material que puede tardar cientos de años en degradarse y que frecuentemente termina contaminando suelos, ríos y océanos.</p>
+<p>Los cotonetes compostables representan una alternativa más amigable con el medio ambiente. Gracias a sus materiales de origen natural, pueden integrarse al ciclo de la naturaleza una vez que terminan su vida útil.</p>
+<h3>El ciclo de compostaje paso a paso</h3>
+<ol>
+  <li><strong>Uso del producto:</strong> Cumple exactamente la misma función que un cotonete convencional, pero con un menor impacto ambiental.</li>
+  <li><strong>Desecho como residuo orgánico:</strong> Una vez utilizado, puede incorporarse junto con otros residuos orgánicos aptos para compostaje, siguiendo las recomendaciones del fabricante.</li>
+  <li><strong>Compostera:</strong> Los microorganismos comienzan a descomponer los materiales orgánicos. Los componentes biodegradables del cotonete se integran gradualmente al resto de los residuos.</li>
+  <li><strong>Formación de compost:</strong> Con el tiempo, la materia orgánica se transforma en compost, un material rico en nutrientes que mejora la calidad del suelo y favorece el crecimiento de las plantas.</li>
+  <li><strong>Uso en huertas y jardines:</strong> El compost puede utilizarse en huertas, jardines y áreas verdes, ayudando a nutrir nuevas plantas y cerrando el ciclo natural.</li>
+</ol>
+<h3>Beneficios de elegir productos compostables</h3>
+<ul>
+  <li>Reducen la generación de residuos plásticos</li>
+  <li>Ayudan a disminuir la contaminación ambiental</li>
+  <li>Favorecen la economía circular</li>
+  <li>Contribuyen a la creación de compost para enriquecer los suelos</li>
+  <li>Promueven hábitos de consumo más responsables</li>
+</ul>
+<h3>Pequeñas acciones, grandes cambios</h3>
+<p>Cambiar productos de uso diario por alternativas compostables puede parecer una decisión pequeña, pero cuando miles de personas adoptan hábitos más sostenibles, el impacto positivo para el planeta es significativo.</p>
+<p>Elegir cotonetes compostables es una forma sencilla de cuidar tu higiene personal mientras contribuyes a un futuro más limpio y sostenible para todos.</p>
+<p><em>Ziroba: innovación y sostenibilidad para el cuidado diario. 🌱♻️</em></p>`
+    },
+    'toalla-vs-esponja': {
+      title: 'Toalla exfoliante vs. esponja de baño: ¿cuál cuida mejor tu piel?',
+      category: 'Toalla Exfoliante', badgeClass: 'badge--orange',
+      date: '20 de febrero, 2026', readTime: '5 min de lectura',
+      imgBg: 'linear-gradient(135deg,#FFF8F0,#E8840A)', emoji: '🆚',
+      imgSrc: 'imagenes/blog/toalla-vs-esponja.png',
+      ctaText: 'Ver Toalla Exfoliante', ctaLink: 'productos.html#toallas',
+      content: `<h3>La esponja de baño tradicional</h3>
+<p>Las esponjas son porosas por naturaleza. Esa porosidad atrapa humedad, células muertas y residuos de jabón, creando un ambiente ideal para bacterias. Una esponja usada por más de 2 semanas puede contener millones de colonias bacterianas.</p>
+<h3>La Toalla Exfoliante Ziroba</h3>
+<p>La estructura de la toalla se puede lavar y secar completamente, eliminando los residuos. Además, ofrece exfoliación mecánica real que la esponja no puede proporcionar.</p>
+<h3>Comparativa directa</h3>
+<ul><li><strong>Exfoliación:</strong> Esponja — baja &nbsp;|&nbsp; Toalla Ziroba — alta</li><li><strong>Higiene:</strong> Esponja — media-baja &nbsp;|&nbsp; Toalla Ziroba — alta</li><li><strong>Durabilidad:</strong> Esponja — 2–4 semanas &nbsp;|&nbsp; Toalla Ziroba — 3–6 meses</li><li><strong>Precio anual:</strong> Esponja — alto &nbsp;|&nbsp; Toalla Ziroba — bajo</li></ul>
+<h3>El veredicto</h3>
+<p>Para exfoliación real, mejor higiene y mayor ahorro a largo plazo, la Toalla Exfoliante Ziroba es la elección superior.</p>`
+    }
+  };
+
+  // ─── Modal ────────────────────────────────────────────────────────────────
+  function openBlogModal(id) {
+    const a = BLOG_ARTICLES[id];
+    if (!a) return;
+    const badgeHtml = a.badgeStyle
+      ? `<span class="badge" style="${a.badgeStyle}font-size:.75rem;padding:3px 10px;">${a.category}</span>`
+      : `<span class="badge ${a.badgeClass}" style="font-size:.75rem;padding:3px 10px;">${a.category}</span>`;
+    // Toma el src exacto de la card clickeada (respeta .png, .jpg, cualquier extensión)
+    const cardEl = document.querySelector(`[onclick*="openBlogModal('${id}')"]`);
+    const cardImgDiv = cardEl?.querySelector('.article-card__img, .article-featured__img');
+    const cardImgTag = cardImgDiv?.querySelector('img');
+    const imgSrc = cardImgTag?.getAttribute('src') || a.imgSrc;
+
+    const img = document.getElementById('bm-img');
+    img.style.background = cardImgDiv?.style.background || a.imgBg;
+    img.innerHTML = `${a.emoji}<img src="${imgSrc}" alt="${a.title}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">`;
+    document.getElementById('bm-meta').innerHTML = `${badgeHtml}<span style="font-size:.8rem;color:var(--gray);">${a.date}</span><span style="font-size:.8rem;color:var(--gray);">· ${a.readTime}</span>`;
+    document.getElementById('bm-title').textContent = a.title;
+    document.getElementById('bm-content').innerHTML = a.content;
+    document.getElementById('bm-cta').href = a.ctaLink;
+    document.getElementById('bm-cta').textContent = a.ctaText;
+    document.getElementById('blog-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeBlogModal() {
+    document.getElementById('blog-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBlogModal(); });
+
+  // ─── Paginación ───────────────────────────────────────────────────────────
+  const PER_PAGE = 6;
+  let currentPage = 1;
+  let currentFilter = 'todos';
+  let searchQuery = '';
+
+  const PREV_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></svg>';
+  const NEXT_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+  function getAllArticles() {
+    return [...document.querySelectorAll('#articles-grid .article-card')];
+  }
+
+  function getFilteredArticles() {
+    return getAllArticles().filter(a => {
+      const catOk = currentFilter === 'todos' || a.dataset.cat === currentFilter;
+      const searchOk = !searchQuery ||
+        (a.querySelector('.article-card__title')?.textContent.toLowerCase().includes(searchQuery)) ||
+        (a.querySelector('.article-card__excerpt')?.textContent.toLowerCase().includes(searchQuery));
+      return catOk && searchOk;
+    });
+  }
+
+  function renderArticles() {
+    const filtered = getFilteredArticles();
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    const start = (currentPage - 1) * PER_PAGE;
+    const pageSet = new Set(filtered.slice(start, start + PER_PAGE));
+    getAllArticles().forEach(a => { a.style.display = pageSet.has(a) ? 'flex' : 'none'; });
+
+    document.getElementById('no-articles').style.display = filtered.length === 0 ? 'block' : 'none';
+    buildPagination(totalPages, filtered.length);
+  }
+
+  function buildPagination(totalPages, total) {
+    const container = document.getElementById('pagination');
+    if (totalPages <= 1) { container.style.display = 'none'; return; }
+    container.style.display = 'flex';
+
+    const prevDis = currentPage === 1 ? 'disabled style="opacity:.4;cursor:not-allowed;"' : '';
+    const nextDis = currentPage === totalPages ? 'disabled style="opacity:.4;cursor:not-allowed;"' : '';
+
+    let html = `<button class="page-btn page-btn--prev" onclick="goToPage(${currentPage - 1})" ${prevDis}>${PREV_SVG} Anterior</button>`;
+    for (let i = 1; i <= totalPages; i++) {
+      html += `<button class="page-btn${i === currentPage ? ' active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+    }
+    html += `<button class="page-btn page-btn--next" onclick="goToPage(${currentPage + 1})" ${nextDis}>Siguiente ${NEXT_SVG}</button>`;
+    container.innerHTML = html;
+  }
+
+  function goToPage(page) {
+    currentPage = page;
+    renderArticles();
+    document.getElementById('articles-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function filtrarCategoria(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = cat;
+    searchQuery = '';
+    currentPage = 1;
+    document.getElementById('blog-search').value = '';
+    renderArticles();
+  }
+
+  function buscarArticulos() {
+    searchQuery = document.getElementById('blog-search').value.toLowerCase().trim();
+    currentFilter = 'todos';
+    currentPage = 1;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    renderArticles();
+  }
+
+  document.getElementById('blog-search').addEventListener('keydown', e => {
+    if (e.key === 'Enter') buscarArticulos();
+    if (e.key === 'Escape') {
+      document.getElementById('blog-search').value = '';
+      searchQuery = '';
+      currentPage = 1;
+      filtrarCategoria('todos', document.querySelector('.filter-btn'));
+    }
+  });
+
+  renderArticles();
+
+  // Abrir artículo si se llega desde enlace externo con #id (ej: blog.html#parrilla)
+  if (window.location.hash) {
+    const id = window.location.hash.slice(1);
+    if (BLOG_ARTICLES[id]) {
+      setTimeout(() => openBlogModal(id), 200);
+    }
+  }
+  </script>
+</body>
+</html>
