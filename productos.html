@@ -166,9 +166,12 @@
     .back-to-top svg { width:22px; height:22px; }
 
     @media (max-width: 768px) {
-      #fibras .split .reveal,
-      #toallas .split .reveal,
-      #cotonetes .split .reveal { order: -1; }
+      #fibras .split,
+      #toallas .split {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        gap: 40px;
+      }
     }
 
     /* Footer Encuéntranos */
