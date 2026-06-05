@@ -1,7 +1,7 @@
 /* =========================================
    ZIROBA MÉXICO — Configuración
    Solo edita este archivo para actualizar
-   la clave de Web3Forms.
+   la clave de Web3Forms.e
    Obtén tu clave gratis en: web3forms.com
    ========================================= */
 
